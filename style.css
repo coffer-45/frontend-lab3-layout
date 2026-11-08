@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root{--ink:#16211e;--cream:#f0eee6;--lime:#c5ec6b;--line:rgba(255,255,255,.18)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#151d19;color:var(--cream);font-family:Manrope,Arial,sans-serif}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--lime);outline-offset:4px}
+.wrap{width:min(1140px,calc(100% - 64px));margin-inline:auto}
+.site-header{border-bottom:1px solid var(--line)}
+.header-inner{min-height:82px;display:flex;align-items:center;gap:40px}
+.brand{font-size:29px;letter-spacing:-.1em;font-weight:800;text-decoration:none}
+.brand span{color:var(--lime)}
+nav{display:flex;gap:25px;margin-left:auto}
+nav a{text-decoration:none;color:#aebaae;font-size:12px;font-weight:700}
+nav a:hover,nav .current{color:var(--lime)}
+.header-note,.eyebrow,.demo-heading>span,.block-tag,.pane-index,.implementation-note,figcaption,footer{font-family:'DM Mono',monospace}
+.header-note{color:#8b9b8e;font-size:11px}
+.intro{padding-block:100px 110px}
+.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:11px;color:var(--lime)}
+.eyebrow span{color:#9cab9e;margin-left:12px}
+h1,h2,h3,p{margin-top:0}
+h1{font-size:clamp(52px,6.7vw,86px);line-height:1.08;letter-spacing:-.08em;margin:30px 0}
+h1 em{font-style:normal;color:var(--lime)}
+.intro-copy{max-width:700px;font-size:17px;line-height:1.8;color:#b7c4b8}
+.next-link{display:inline-flex;align-items:center;gap:22px;text-decoration:none;border-bottom:1px solid var(--lime);padding-bottom:10px;margin-top:16px;font-size:14px;font-weight:700}
+.next-link span{color:var(--lime);font-size:19px}
+.demo{padding-block:90px 110px;background:var(--cream);color:var(--ink)}
+.demo-heading{margin-bottom:42px}
+.demo-heading>span{font-size:11px;color:#50745e;letter-spacing:.14em}
+h2{font-size:clamp(36px,4vw,55px);letter-spacing:-.06em;margin:15px 0 10px}
+.demo-heading p{font-size:15px;color:#596760}
+.specimen{margin:0;padding:clamp(24px,6.5vw,78px);background:#fff;box-shadow:0 18px 45px rgba(26,39,28,.1)}
+.mock-layout{width:100%;color:#101c17}
+.mock-top{min-height:142px;background:#73a9df;padding:26px 35px}
+.block-tag{font-size:11px;letter-spacing:.12em;font-weight:500}
+.mock-top h3{font-size:clamp(23px,3vw,37px);line-height:1.15;letter-spacing:-.045em;margin:10px 0 0}
+.layout-body{width:100%}
+.media-pane,.text-pane{height:390px}
+.media-pane,.wide-image{overflow:hidden;background:#bce792}
+.media-pane,.wide-image{position:relative}
+.media-pane img,.wide-image img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(.8);opacity:.68;mix-blend-mode:multiply}
+.media-pane img{object-position:50% 56%}
+.wide-image{height:205px;background:#f0b8ec}
+.wide-image img{object-position:50% 34%}
+.pane-content{position:absolute;bottom:26px;left:34px;text-shadow:0 1px 9px #e5f3d5}
+.pane-content .block-tag,.pane-content strong{display:block}
+.pane-content strong{font-size:clamp(24px,3vw,37px);line-height:1.1;letter-spacing:-.055em}
+.text-pane{padding:34px 24px;background:#94ae73}
+.text-pane p{font-size:clamp(15px,1.5vw,19px);line-height:1.55;font-weight:600;margin:65px 0 75px}
+.pane-index{display:block;font-size:11px;opacity:.75}
+
+/* Завдання 1: середній ряд — float і ОБОВ'ЯЗКОВІ ширини у відсотках. */
+.float-layout .media-pane{float:left;width:75%}
+.float-layout .text-pane{float:left;width:25%}
+.float-layout .layout-body::after{content:"";display:block;clear:both}
+
+/* Завдання 2: той самий середній ряд і ті самі пропорції — Flexbox. */
+.flex-layout .layout-body{display:flex}
+.flex-layout .media-pane{flex:0 0 75%}
+.flex-layout .text-pane{flex:0 0 25%}
+
+.specimen figcaption{font-size:11px;line-height:1.6;color:#68756b;margin-top:20px}
+.implementation-note{color:#556457;line-height:1.7;font-size:12px;margin:27px 0 0}
+.note-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#74a8d9;margin-right:10px}
+code{font-family:'DM Mono',monospace}
+footer{font-size:11px;color:#97a798}
+.footer-inner{display:flex;justify-content:space-between;gap:25px;padding-block:33px}
+footer a{text-underline-offset:3px}
+@media(max-width:760px){.wrap{width:min(100% - 34px,640px)}.header-inner{min-height:70px}.header-note{display:none}.intro{padding-block:80px}.demo{padding-block:65px}.text-pane{padding:28px 25px}.text-pane p{font-size:16px}.footer-inner{display:block}.footer-inner span{display:block;margin-bottom:10px}}
+@media(max-width:760px){.float-layout .media-pane,.float-layout .text-pane{float:none;width:100%}.flex-layout .layout-body{flex-direction:column}.flex-layout .media-pane,.flex-layout .text-pane{flex:0 0 auto;width:100%}.media-pane{height:300px}.text-pane{height:auto;min-height:190px}.text-pane p{margin:28px 0}.mock-top{padding:25px;min-height:125px}.pane-content{left:25px;bottom:23px}.wide-image{height:170px}.specimen{padding:18px}nav{gap:14px}nav a{font-size:11px}.eyebrow span{display:block;margin:10px 0 0}.intro-copy{font-size:15px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

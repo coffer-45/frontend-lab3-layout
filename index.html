@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Лабораторна робота №3: блочна верстка макета №7 за допомогою float та відсоткової ширини.">
+    <title>Вовк Андрій Андрійович · ІО-41 · Лабораторна №3 · Варіант 7 · float</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="index.html" aria-label="Лабораторна №3, головна сторінка">АВ<span>.</span></a>
+        <nav aria-label="Спосіб верстки">
+          <a class="current" aria-current="page" href="index.html">01 / Float</a>
+          <a href="flex.html">02 / Flexbox <span aria-hidden="true">↗</span></a>
+        </nav>
+        <span class="header-note">FE / ЛР 03</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro wrap" aria-labelledby="page-title">
+        <p class="eyebrow">Лабораторна робота №3 <span>/ Варіант 7 / №67 у списку</span></p>
+        <h1 id="page-title">Той самий макет.<br><em>Різні правила.</em></h1>
+        <p class="intro-copy">Завдання 1: блочна верстка за макетом із методички. Середній ряд складається з двох блоків, що плавають поруч; їхня ширина задана у відсотках.</p>
+        <a class="next-link" href="flex.html">Порівняти з Flexbox <span aria-hidden="true">↗</span></a>
+      </section>
+
+      <section class="demo" aria-labelledby="demo-title">
+        <div class="wrap">
+          <div class="demo-heading"><span>01 / FLOAT</span><h2 id="demo-title">Структура варіанта №7</h2><p>Смуга тексту → два блоки 75% / 25% → смуга зображення.</p></div>
+          <figure class="specimen">
+            <div class="mock-layout float-layout">
+              <div class="mock-top">
+                <p class="block-tag">TEXT / ВЕРХНІЙ БЛОК</p>
+                <h3>Мукачево.<br>Місто, до якого повертаються.</h3>
+              </div>
+              <div class="layout-body">
+                <div class="media-pane">
+                  <img src="mukachevo-center.jpg" alt="Площа Мукачева з ратушею та історичними будівлями" width="1050" height="700">
+                  <div class="pane-content"><span class="block-tag">IMG. / 75%</span><strong>Центр міста</strong></div>
+                </div>
+                <aside class="text-pane">
+                  <span class="block-tag">TEXT / 25%</span>
+                  <p>Старі вулиці, затишна площа та знайомі місця — речі, завдяки яким Мукачево завжди нагадує про дім.</p>
+                  <span class="pane-index">01 — Закарпаття</span>
+                </aside>
+              </div>
+              <div class="wide-image">
+                <img src="mukachevo-center.jpg" alt="Другий ракурс площі Мукачева з ратушею" width="1050" height="700">
+                <div class="pane-content"><span class="block-tag">IMG. / НИЖНІЙ БЛОК</span><strong>Місто в деталях</strong></div>
+              </div>
+            </div>
+            <figcaption>Макет №7: верхній текст, зображення зліва, текст справа та нижнє зображення.</figcaption>
+          </figure>
+          <p class="implementation-note"><span class="note-dot"></span>У цій версії середні блоки мають <code>float: left</code>, <code>width: 75%</code> і <code>width: 25%</code>. Потік після них відновлено через clearfix.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer><div class="wrap footer-inner"><span>Вовк Андрій Андрійович · ІО-41 · №67 → варіант 7</span><span>Фото: <a href="https://commons.wikimedia.org/wiki/File:%D0%9C%D1%83%D0%BA%D0%B0%D1%87%D0%B5%D0%B2%D0%BE%2C_%D1%86%D0%B5%D0%BD%D1%82%D1%80.jpg">Петро Паровінчак / Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a></span></div></footer>
+  </body>
+</html>
